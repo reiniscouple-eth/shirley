@@ -1,238 +1,205 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="scroll-smooth">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shirley Filkauskas Reinis | Psicanalista</title>
+    <title>Shirley Reinis | Psicanalista Online</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Google Fonts -->
+
+    <!-- Google Fonts: Cormorant Garamond -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
-    
-    <!-- Favicon (ícone da aba do navegador) -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>S</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <style>
-        /* Define as fontes personalizadas */
+        /*
+        -- Cores da Paleta --
+        Verde Oliva: #6B7A4A
+        Verde Escuro: #2A3D22
+        Creme/Off-white: #F8F4E8
+        Laranja Claro/Ocre: #E0A669
+        Laranja Escuro/Ferrugem: #C87D39
+        */
+
+        :root {
+            --bg-creme: #F8F4E8;
+            --text-dark-green: #2A3D22;
+            --accent-olive: #6B7A4A;
+            --cta-rust: #C87D39;
+            --cta-ocre: #E0A669;
+        }
+
+        /* Applying a single, elegant font throughout the site */
         body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #FDFBF8; /* Um branco levemente aquecido */
-        }
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Playfair Display', serif;
-        }
-        /* Estilo para o link de navegação ativo */
-        .nav-link-active {
-            color: #1A535C; /* Cor de destaque */
+            font-family: 'Cormorant Garamond', serif;
+            background-color: var(--bg-creme);
+            color: var(--text-dark-green);
+            font-size: 1.1rem; 
             font-weight: 500;
-            position: relative;
         }
-        .nav-link-active::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background-color: #1A535C;
+
+        h1, h2, h3 {
+             font-weight: 700;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Helper class for section titles */
+        .section-title {
+            @apply text-4xl md:text-5xl font-bold mb-4 text-center;
+            color: var(--text-dark-green);
+        }
+        
+        .section-subtitle {
+            @apply text-xl text-center max-w-2xl mx-auto;
+            color: var(--accent-olive);
+        }
+        
+        /* Justified text for paragraphs */
+        .text-body {
+            @apply text-justify mb-4;
+        }
+
+        /* Main CTA button style */
+        .cta-button {
+            @apply inline-block px-10 py-4 rounded-full font-bold uppercase tracking-wider transition-all duration-300 transform hover:scale-105;
+            border: 2px solid var(--cta-rust);
+            background-color: var(--cta-rust);
+            color: white;
+        }
+        .cta-button:hover {
+            background-color: var(--cta-ocre);
+            border-color: var(--cta-ocre);
+        }
+        
+        /* UPDATED social media icon styles */
+        .social-icon {
+             @apply w-16 h-16 flex items-center justify-center rounded-full text-3xl transition-all duration-300; /* Increased size */
+             border: 2px solid var(--accent-olive);
+             color: var(--accent-olive);
+             background-color: transparent;
+        }
+        .social-icon:hover {
+            background-color: var(--accent-olive);
+            color: var(--bg-creme);
+            transform: translateY(-5px);
         }
     </style>
 </head>
-<body class="text-gray-700 antialiased">
+<body class="antialiased">
 
-    <!-- CABEÇALHO E NAVEGAÇÃO -->
-    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-xl font-semibold text-gray-800 tracking-wide">Shirley F. Reinis</a>
-            
-            <!-- Navegação para Desktop -->
-            <nav class="hidden md:flex space-x-8">
-                <a href="#sobre" class="nav-link text-gray-600 hover:text-gray-900 transition duration-300">Sobre mim</a>
-                <a href="#psicanalise" class="nav-link text-gray-600 hover:text-gray-900 transition duration-300">A Psicanálise</a>
-                <a href="#atendimento" class="nav-link text-gray-600 hover:text-gray-900 transition duration-300">Atendimento</a>
-                <a href="#contato" class="nav-link text-gray-600 hover:text-gray-900 transition duration-300">Contato</a>
-            </nav>
-            
-            <!-- Botão do Menu Mobile -->
-            <button id="mobile-menu-button" class="md:hidden">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-            </button>
-        </div>
-        
-        <!-- Menu Mobile -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white px-6 pb-4">
-            <a href="#sobre" class="block py-2 text-gray-600 hover:text-gray-900">Sobre mim</a>
-            <a href="#psicanalise" class="block py-2 text-gray-600 hover:text-gray-900">A Psicanálise</a>
-            <a href="#atendimento" class="block py-2 text-gray-600 hover:text-gray-900">Atendimento</a>
-            <a href="#contato" class="block py-2 text-gray-600 hover:text-gray-900">Contato</a>
-        </div>
+    <!-- Header Section -->
+    <header class="p-4 md:px-8 flex justify-between items-center sticky top-0 bg-white/80 backdrop-blur-sm z-50 shadow-sm">
+        <h1 class="text-3xl font-bold" style="color: var(--text-dark-green);">Shirley Reinis</h1>
+        <nav class="hidden md:flex gap-8 text-lg">
+            <a href="#sobre" class="hover:text-gray-900 transition-colors">Sobre mim</a>
+            <a href="#servicos" class="hover:text-gray-900 transition-colors">Como posso ajudar</a>
+            <a href="#contato" class="hover:text-gray-900 transition-colors">Contato</a>
+        </nav>
+        <!-- UPDATED Header Button -->
+        <a href="https://wa.me/55SEUNUMEROAQUI?text=Olá,%20Shirley!%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" class="hidden md:inline-block px-8 py-3 rounded-full font-semibold text-white text-base transition-colors duration-300 hover:bg-opacity-90" style="background-color: var(--cta-rust);">Agendar Consulta</a>
     </header>
 
+    <!-- Main Content -->
     <main>
-        <!-- SEÇÃO HERO -->
-        <section id="hero" class="relative min-h-[80vh] flex items-center bg-cover bg-center" style="background-image: url('https://placehold.co/1920x1080/FDFBF8/333333?text=Imagem+Abstrata+e+Acolhedora');">
-             <div class="absolute inset-0 bg-black/20"></div>
-            <div class="container mx-auto px-6 text-center relative z-10">
-                <h1 class="text-4xl md:text-6xl text-white font-medium mb-4 leading-tight shadow-text">Um espaço de escuta e transformação</h1>
-                <p class="text-lg md:text-xl text-white/90 max-w-3xl mx-auto mb-8">Através da psicanálise, convido você a uma jornada de autoconhecimento e ressignificação da sua história.</p>
-                <a href="#contato" class="bg-[#1A535C] text-white py-3 px-8 rounded-full text-lg hover:bg-[#133c42] transition duration-300 shadow-lg">Agende uma conversa</a>
+
+        <!-- Hero Section -->
+        <section id="hero" class="text-center py-20 px-4 flex flex-col items-center justify-center min-h-[80vh]">
+            <h2 class="text-5xl md:text-7xl font-bold mb-4" style="color: var(--text-dark-green);">Entenda suas emoções, transforme sua vida.</h2>
+            <p class="text-xl md:text-2xl max-w-3xl mx-auto mb-10" style="color: var(--accent-olive);">A psicanálise é uma jornada de autoconhecimento que abre caminhos para uma vida mais leve e consciente. Vamos começar a sua?</p>
+            <a href="https://wa.me/55SEUNUMEROAQUI?text=Olá,%20Shirley!%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" class="cta-button">
+                <i class="fab fa-whatsapp mr-3"></i> Iniciar Conversa
+            </a>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="sobre" class="py-24 px-4 bg-white">
+            <div class="container mx-auto max-w-5xl flex flex-col md:flex-row items-center gap-16">
+                <div class="md:w-1/3">
+                    <img src="https://placehold.co/400x400/2A3D22/F8F4E8?text=Shirley+Reinis" alt="Foto da psicanalista Shirley Reinis" class="rounded-full w-72 h-72 md:w-full md:h-auto object-cover mx-auto shadow-xl">
+                </div>
+                <div class="md:w-2/3">
+                    <h2 class="section-title text-center md:text-left">Prazer, sou Shirley Reinis</h2>
+                    <p class="text-body">Como psicanalista, meu trabalho é oferecer um espaço de escuta segura e sem julgamentos, onde você pode explorar suas questões mais profundas. Acredito que, ao compreendermos a origem de nossas angústias, medos e padrões de comportamento, podemos ressignificar nossas histórias e construir um futuro mais autêntico.</p>
+                    <p class="text-body">Com uma abordagem que conecta os conceitos da psicanálise ao nosso dia a dia, meu objetivo é ajudar você a decifrar seu próprio universo interior. As consultas são 100% online, proporcionando conforto e flexibilidade para cuidar da sua saúde mental onde quer que você esteja.</p>
+                </div>
             </div>
         </section>
 
-        <!-- SEÇÃO SOBRE MIM -->
-        <section id="sobre" class="py-20 md:py-32 bg-white">
-            <div class="container mx-auto px-6">
-                <div class="flex flex-col md:flex-row items-center gap-12 md:gap-16">
-                    <div class="md:w-1/3">
-                        <img src="https://placehold.co/600x800/E0E0E0/333333?text=Foto+Profissional+de+Shirley" alt="Foto profissional de Shirley Filkauskas Reinis" class="rounded-lg shadow-xl w-full">
+        <!-- Services Section -->
+        <section id="servicos" class="py-24 px-4">
+            <div class="container mx-auto max-w-6xl">
+                <h2 class="section-title">Como a psicanálise pode te ajudar?</h2>
+                <p class="section-subtitle mb-16">A análise é um processo para quem busca entender a si mesmo e encontrar novas formas de lidar com os desafios da vida.</p>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    <!-- Service Card 1 -->
+                    <div class="bg-white p-8 rounded-lg shadow-md text-center hover:shadow-2xl transition-shadow duration-300">
+                        <i class="fas fa-brain text-5xl mb-5" style="color: var(--cta-rust);"></i>
+                        <h3 class="text-3xl font-bold mb-3">Ansiedade e Estresse</h3>
+                        <p class="text-justify">Aprenda a identificar os gatilhos e a lidar com a ansiedade que paralisa e o estresse do cotidiano.</p>
                     </div>
-                    <div class="md:w-2/3 text-center md:text-left">
-                        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Shirley Filkauskas Reinis</h2>
-                        <p class="text-lg text-gray-600 mb-4 leading-relaxed">
-                            Sou psicanalista com uma escuta atenta e dedicada ao sofrimento humano. Minha formação me permite oferecer um espaço seguro e ético, onde cada indivíduo é acolhido em sua singularidade.
-                        </p>
-                        <p class="text-gray-600 mb-4 leading-relaxed">
-                            Acredito que a análise é um caminho poderoso para lidar com angústias, ansiedades, questões de relacionamento e o mal-estar que, por vezes, se manifesta sem um nome definido. Meu trabalho é guiar você na busca por um maior entendimento de si mesmo, abrindo possibilidades para uma vida com mais sentido e liberdade.
-                        </p>
-                         <p class="text-gray-600 leading-relaxed">
-                           <!-- Adicionar aqui informações sobre formação, como "Membro do [Nome da Instituição Psicanalítica]" ou "Formação em Psicanálise pela [Nome da Escola]". -->
-                           Formação em Psicanálise pelo [Nome da Instituição]. Atuo com base nos princípios éticos da psicanálise, garantindo sigilo e respeito absoluto à sua história.
-                        </p>
+
+                    <!-- Service Card 2 -->
+                    <div class="bg-white p-8 rounded-lg shadow-md text-center hover:shadow-2xl transition-shadow duration-300">
+                        <i class="fas fa-heart-crack text-5xl mb-5" style="color: var(--cta-rust);"></i>
+                        <h3 class="text-3xl font-bold mb-3">Relacionamentos</h3>
+                        <p class="text-justify">Compreenda seus padrões em relações amorosas, familiares e de amizade, construindo laços mais saudáveis.</p>
+                    </div>
+
+                    <!-- Service Card 3 -->
+                    <div class="bg-white p-8 rounded-lg shadow-md text-center hover:shadow-2xl transition-shadow duration-300">
+                        <i class="fas fa-user-check text-5xl mb-5" style="color: var(--cta-rust);"></i>
+                        <h3 class="text-3xl font-bold mb-3">Autoconhecimento</h3>
+                        <p class="text-justify">Descubra suas potencialidades, lide com a autossabotagem e fortaleça sua autoestima e confiança.</p>
                     </div>
                 </div>
             </div>
         </section>
         
-        <!-- SEÇÃO A PSICANÁLISE -->
-        <section id="psicanalise" class="py-20 md:py-32 bg-[#FDFBF8]">
-            <div class="container mx-auto px-6 text-center">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">O que é a Psicanálise?</h2>
-                <p class="max-w-3xl mx-auto text-lg text-gray-600 mb-12 leading-relaxed">
-                    A psicanálise é mais do que uma terapia; é um método de investigação do inconsciente, criado por Sigmund Freud. Através da fala livre, o paciente é convidado a explorar seus pensamentos, sonhos e memórias. O objetivo não é oferecer respostas prontas, mas sim construir, junto ao analista, um saber sobre si mesmo que alivia o sofrimento e transforma a maneira como se vive.
-                </p>
-                <div class="grid md:grid-cols-3 gap-8">
-                    <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                        <h3 class="text-xl font-semibold text-[#1A535C] mb-3">Autoconhecimento</h3>
-                        <p class="text-gray-600">Entender a origem de seus padrões de comportamento, pensamentos e emoções.</p>
-                    </div>
-                    <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                        <h3 class="text-xl font-semibold text-[#1A535C] mb-3">Lidar com Angústias</h3>
-                        <p class="text-gray-600">Elaborar perdas, traumas e conflitos internos que geram ansiedade e mal-estar.</p>
-                    </div>
-                    <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                        <h3 class="text-xl font-semibold text-[#1A535C] mb-3">Relações Saudáveis</h3>
-                        <p class="text-gray-600">Melhorar a qualidade dos seus laços afetivos, familiares e profissionais.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- SEÇÃO ATENDIMENTO -->
-        <section id="atendimento" class="py-20 md:py-32 bg-white">
-            <div class="container mx-auto px-6">
-                <div class="flex flex-col md:flex-row items-center gap-12">
-                     <div class="md:w-1/2 text-center md:text-left">
-                        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Um Ambiente Seguro e Sigiloso</h2>
-                        <p class="text-lg text-gray-600 mb-4 leading-relaxed">
-                           Os atendimentos são realizados em um ambiente que preza pelo conforto, privacidade e, acima de tudo, pelo sigilo absoluto, um pilar fundamental da prática psicanalítica.
-                        </p>
-                         <div class="mt-8 space-y-4">
-                            <div class="flex items-start">
-                                <svg class="w-6 h-6 text-[#1A535C] mr-4 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.636 18.364a9 9 0 010-12.728m12.728 0a9 9 0 010 12.728m-9.9-2.829a5 5 0 010-7.07m7.072 0a5 5 0 010 7.07M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                                <div>
-                                    <h3 class="font-semibold text-xl text-gray-800">Atendimento Online</h3>
-                                    <p class="text-gray-600">Para sua comodidade e segurança, ofereço sessões por videochamada, permitindo que você realize sua análise de qualquer lugar do mundo.</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start">
-                                 <svg class="w-6 h-6 text-[#1A535C] mr-4 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                                <div>
-                                    <h3 class="font-semibold text-xl text-gray-800">Atendimento Presencial</h3>
-                                    <p class="text-gray-600">Consultório localizado em [Sua Cidade, Estado], um espaço pensado para ser discreto e acolhedor. (Se aplicável)</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                     <div class="md:w-1/2 mt-10 md:mt-0">
-                        <img src="https://placehold.co/800x600/FDFBF8/CCCCCC?text=Imagem+do+Espaço+de+Atendimento" alt="Espaço de atendimento acolhedor" class="rounded-lg shadow-xl w-full">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- SEÇÃO CONTATO -->
-        <section id="contato" class="py-20 md:py-32 bg-[#1A535C] text-white">
-            <div class="container mx-auto px-6 text-center">
-                <h2 class="text-3xl md:text-4xl font-semibold mb-4">Inicie sua Jornada</h2>
-                <p class="max-w-2xl mx-auto text-lg text-white/90 mb-10">
-                    O primeiro passo é uma conversa inicial para nos conhecermos e entendermos como a análise pode lhe ajudar. Entre em contato para agendar seu horário.
-                </p>
-                <a href="https://wa.me/55119XXXXXXXX?text=Olá,%20gostaria%20de%20agendar%20uma%20conversa%20inicial." target="_blank" class="inline-block bg-white text-[#1A535C] font-semibold py-4 px-10 rounded-full text-lg hover:bg-gray-200 transition duration-300 shadow-lg">
-                    <svg class="w-6 h-6 inline-block mr-3" fill="currentColor" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M16.75,13.96C17.09,14.3 17.08,14.85 16.74,15.2C16.3,15.64 15.6,15.86 15.03,15.71C14.33,15.53 12.5,14.94 11.07,13.5C9.64,12.07 9.05,10.27 8.87,9.57C8.72,9 8.95,8.3 9.38,7.86C9.73,7.5 10.28,7.5 10.62,7.85L11.53,8.75C11.87,9.1 11.88,9.65 11.53,10C11.27,10.26 11.05,10.53 10.88,10.69C10.79,10.78 10.76,10.89 10.84,10.97C11.23,11.36 11.96,12.09 12.53,12.66C13.1,13.23 13.83,13.96 14.22,14.35C14.3,14.43 14.42,14.4 14.5,14.31C14.67,14.14 14.94,13.92 15.2,13.66C15.55,13.32 16.1,13.3 16.45,13.65L16.75,13.96M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22C10.83,22 9.7,21.76 8.65,21.33L3.41,22.59L4.67,17.35C4.24,16.3 4,15.17 4,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12C4,13.07 4.24,14.1 4.68,15.03L5.3,16.39L4.44,19.56L7.61,18.7L8.97,19.32C9.9,19.76 10.93,20 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4Z"></path></svg>
-                    Fale pelo WhatsApp
+        <!-- Call to Action Section -->
+        <section id="contato" class="py-24 px-4 text-white" style="background-color: var(--text-dark-green);">
+            <div class="container mx-auto max-w-4xl text-center">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">Pronto para dar o primeiro passo?</h2>
+                <p class="text-xl mb-10" style="color: var(--bg-creme);">Sua jornada de transformação começa com uma decisão. Me envie uma mensagem para agendarmos sua primeira sessão. Estou aqui para te escutar.</p>
+                <a href="https://wa.me/55SEUNUMEROAQUI?text=Olá,%20Shirley!%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" class="cta-button">
+                    <i class="fab fa-whatsapp mr-3"></i> Agendar Sessão Online
                 </a>
-                 <div class="mt-8 text-white/80">
-                    <p>Ou, se preferir, envie um e-mail:</p>
-                    <a href="mailto:contato@shirleyreinis.com.br" class="font-semibold hover:text-white">contato@shirleyreinis.com.br</a>
-                </div>
             </div>
         </section>
+
     </main>
 
-    <!-- RODAPÉ -->
-    <footer class="bg-gray-800 text-white">
-        <div class="container mx-auto px-6 py-8 text-center">
-            <p>&copy; 2024 Shirley Filkauskas Reinis | Psicanalista</p>
-            <p class="text-sm text-gray-400 mt-2">CRP (se aplicável): XX/XXXXX | Atendimento em [Sua Cidade]</p>
-            <p class="text-xs text-gray-500 mt-6">
-                Este site respeita as diretrizes do Código de Ética Profissional. O conteúdo é informativo e não substitui a análise ou tratamento psicoterapêutico.
-            </p>
+    <!-- Footer -->
+    <footer class="bg-white py-16 px-4">
+        <div class="container mx-auto text-center">
+            <p class="font-bold text-2xl mb-6" style="color: var(--accent-olive);">Me acompanhe nas redes sociais:</p>
+            <div class="flex justify-center gap-8 mb-10">
+                <a href="https://www.instagram.com/shirleyreinis/" target="_blank" class="social-icon">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.tiktok.com/@shirleyreinis" target="_blank" class="social-icon">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+                <a href="https://www.youtube.com/@shirleyreinis" target="_blank" class="social-icon">
+                    <i class="fab fa-youtube"></i>
+                </a>
+            </div>
+            <p class="text-base text-gray-600">&copy; <span id="year"></span> Shirley Reinis | Todos os direitos reservados.</p>
+            <p class="text-sm text-gray-500 mt-2">Atendimento 100% Online</p>
         </div>
     </footer>
 
     <script>
-        // --- SCRIPT PARA MENU MOBILE ---
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-        
-        // Fecha o menu mobile ao clicar em um link
-        mobileMenu.addEventListener('click', (e) => {
-            if(e.target.tagName === 'A'){
-                mobileMenu.classList.add('hidden');
-            }
-        });
-
-
-        // --- SCRIPT PARA REALÇAR O LINK DE NAVEGAÇÃO ATIVO NO SCROLL ---
-        const sections = document.querySelectorAll('section');
-        const navLinks = document.querySelectorAll('.nav-link');
-
-        window.addEventListener('scroll', () => {
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                // O 150 é um offset para ativar o link um pouco antes de chegar na seção
-                if (pageYOffset >= sectionTop - 150) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove('nav-link-active');
-                if (link.getAttribute('href').includes(current)) {
-                    link.classList.add('nav-link-active');
-                }
-            });
-        });
-
+        // Set current year in the footer
+        document.getElementById('year').textContent = new Date().getFullYear();
     </script>
 
 </body>
