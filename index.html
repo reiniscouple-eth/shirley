@@ -3,18 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shirley Reinis | Psicanalista Online</title>
     
-    <!-- Tailwind CSS -->
+    <title>Shirley Reinis | Psicanalista Online | Terapia para Ansiedade e Autoconhecimento</title>
+
+    <meta name="description" content="Psicanalista online Shirley Reinis. Sessões de psicanálise para tratar ansiedade, estresse, questões de relacionamento e promover o autoconhecimento. Agende sua consulta.">
+    <meta name="keywords" content="psicanalista online, psicanálise, terapia online, shirley reinis, ansiedade, estresse, autoconhecimento, relacionamentos">
+
+    <meta property="og:title" content="Shirley Reinis | Psicanalista Online">
+    <meta property="og:description" content="A psicanálise é uma jornada de autoconhecimento. Entenda suas emoções e transforme sua vida com sessões 100% online.">
+    <meta property="og:image" content="URL_DA_SUA_FOTO_AQUI.jpg"> <meta property="og:url" content="URL_DO_SEU_SITE_AQUI"> <meta property="og:type" content="website">
+
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Google Fonts: Cormorant Garamond -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Psychologist",
+      "name": "Shirley Reinis",
+      "description": "Psicanalista com atendimento 100% online, focada em ajudar pacientes com ansiedade, estresse, questões de relacionamento e busca por autoconhecimento.",
+      "image": "URL_DA_SUA_FOTO_AQUI.jpg", /* SEO: Repita a URL da sua imagem aqui */
+      "telephone": "+5514997477254",
+      "url": "URL_DO_SEU_SITE_AQUI", /* SEO: Repita a URL do seu site aqui */
+      "areaServed": {
+        "@type": "Country",
+        "name": "BR"
+      },
+      "serviceType": [
+        "Psicanálise Online",
+        "Terapia para Ansiedade",
+        "Terapia de Relacionamento",
+        "Desenvolvimento Pessoal"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Sessões de Psicanálise",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Sessão de Psicanálise Online"
+            }
+          }
+        ]
+      }
+    }
+    </script>
 
     <style>
         :root {
@@ -34,7 +74,7 @@
         }
 
         h1, h2, h3 {
-             font-weight: 700;
+            font-weight: 700;
         }
 
         html {
@@ -72,19 +112,16 @@
 </head>
 <body class="antialiased">
 
-    <!-- Header Section -->
     <header class="p-4 md:px-8 flex justify-between items-center sticky top-0 bg-white/80 backdrop-blur-sm z-50 shadow-sm">
-        <h1 class="text-3xl font-bold text-custom-dark-green">Shirley Reinis</h1>
+        <p class="text-3xl font-bold text-custom-dark-green">Shirley Reinis</p>
         
-        <!-- Desktop Navigation -->
         <nav class="hidden md:flex gap-8 text-lg items-center">
             <a href="#sobre" class="hover:text-gray-900 transition-colors">Sobre mim</a>
             <a href="#servicos" class="hover:text-gray-900 transition-colors">Como posso ajudar</a>
             <a href="#contato" class="hover:text-gray-900 transition-colors">Contato</a>
-            <a href="https://wa.me/5514997477254?text=Olá,%20Shirley!%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" class="inline-flex items-center justify-center px-8 py-3 rounded-full font-bold text-white uppercase tracking-wider text-sm bg-custom-rust hover:bg-custom-ocre transition-all duration-300 transform hover:scale-105">Agendar Consulta</a>
+            <a href="https://wa.me/5514997477254?text=Olá,%20Shirley!%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-8 py-3 rounded-full font-bold text-white uppercase tracking-wider text-sm bg-custom-rust hover:bg-custom-ocre transition-all duration-300 transform hover:scale-105">Agendar Consulta</a>
         </nav>
 
-        <!-- Hamburger Button -->
         <div class="md:hidden">
             <button id="hamburger-button" class="text-3xl p-2 text-custom-dark-green" aria-label="Abrir menu">
                 <i class="fas fa-bars"></i>
@@ -92,7 +129,6 @@
         </div>
     </header>
 
-    <!-- Mobile Menu -->
     <div id="mobile-menu" class="hidden fixed inset-0 z-[100] flex flex-col items-center justify-center opacity-0 bg-custom-dark-green/95">
         <button id="close-button" class="absolute top-5 right-5 text-4xl text-white p-2" aria-label="Fechar menu">
             <i class="fas fa-times"></i>
@@ -101,29 +137,26 @@
             <a href="#sobre" class="mobile-menu-link text-3xl text-white font-semibold">Sobre mim</a>
             <a href="#servicos" class="mobile-menu-link text-3xl text-white font-semibold">Como posso ajudar</a>
             <a href="#contato" class="mobile-menu-link text-3xl text-white font-semibold">Contato</a>
-            <a href="https://wa.me/5514997477254?text=Olá,%20Shirley!%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" class="mt-8 inline-flex items-center justify-center px-8 py-4 rounded-full font-bold text-white uppercase tracking-wider text-lg border-2 border-white hover:bg-white hover:text-custom-rust transition-colors">
+            <a href="https://wa.me/5514997477254?text=Olá,%20Shirley!%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener noreferrer" class="mt-8 inline-flex items-center justify-center px-8 py-4 rounded-full font-bold text-white uppercase tracking-wider text-lg border-2 border-white hover:bg-white hover:text-custom-rust transition-colors">
                 <i class="fab fa-whatsapp mr-3"></i> Agendar Consulta
             </a>
         </nav>
     </div>
 
 
-    <!-- Main Content -->
     <main>
-        <!-- Hero Section -->
         <section id="hero" class="text-center py-20 px-4 flex flex-col items-center justify-center min-h-[80vh]">
-            <h2 class="font-bold mb-4 text-center text-custom-dark-green text-4xl md:text-5xl leading-tight">Entenda suas emoções, transforme sua vida.</h2>
+            <h1 class="font-bold mb-4 text-center text-custom-dark-green text-4xl md:text-5xl leading-tight">Entenda suas emoções, transforme sua vida.</h1>
             <p class="section-subtitle text-custom-olive md:text-2xl mt-4">A psicanálise é uma jornada de autoconhecimento que abre caminhos para uma vida mais leve e consciente. Vamos começar a sua?</p>
-            <a href="https://wa.me/5514997477254?text=Olá,%20Shirley!%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" class="mt-10 inline-flex items-center justify-center px-10 py-4 rounded-full font-bold text-white uppercase tracking-wider bg-custom-rust hover:bg-custom-ocre transition-all duration-300 transform hover:scale-105">
+            <a href="https://wa.me/5514997477254?text=Olá,%20Shirley!%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener noreferrer" class="mt-10 inline-flex items-center justify-center px-10 py-4 rounded-full font-bold text-white uppercase tracking-wider bg-custom-rust hover:bg-custom-ocre transition-all duration-300 transform hover:scale-105">
                 <i class="fab fa-whatsapp mr-3"></i> Iniciar Conversa
             </a>
         </section>
 
-        <!-- About Me Section - UPDATED LAYOUT -->
         <section id="sobre" class="py-24 px-4 bg-white">
             <div class="container mx-auto max-w-5xl flex flex-col items-center gap-12">
                 <div>
-                    <img src="WhatsApp Image 2025-06-19 at 16.32.26.jpeg" alt="Foto da psicanalista Shirley Reinis" class="rounded-full w-64 h-64 md:w-72 md:h-72 object-cover mx-auto shadow-xl">
+                    <img src="shirley-reinis-psicanalista-online.jpg" alt="Foto da psicanalista Shirley Reinis, especialista em terapia online." class="rounded-full w-64 h-64 md:w-72 md:h-72 object-cover mx-auto shadow-xl">
                 </div>
                 <div class="w-full text-center">
                     <h2 class="font-bold mb-6 text-center text-custom-dark-green text-4xl md:text-5xl">Prazer, sou Shirley Reinis</h2>
@@ -135,11 +168,10 @@
             </div>
         </section>
 
-        <!-- Services Section -->
         <section id="servicos" class="py-24 px-4">
             <div class="container mx-auto max-w-6xl">
                 <h2 class="font-bold mb-4 text-center text-custom-dark-green text-4xl md:text-5xl">Como a psicanálise pode te ajudar?</h2>
-                <p class="section-subtitle text-custom-olive mb-16 md:text-2xl">A análise é um processo para quem busca entender a si mesmo e encontrar novas formas de lidar com os desafios da vida.</p>
+                <p class="section-subtitle text-custom-olive mb-16 md:text-2xl">A análise é um processo para quem busca entender a si mesmo e encontrar novas formas de lidar com os desafios da vida através da terapia online.</p>
                 
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
                     <div class="bg-white p-8 rounded-lg shadow-md text-center hover:shadow-2xl transition-shadow duration-300">
@@ -161,12 +193,11 @@
             </div>
         </section>
         
-        <!-- Call to Action Section -->
         <section id="contato" class="py-24 px-4 text-white bg-custom-dark-green">
             <div class="container mx-auto max-w-4xl text-center">
                 <h2 class="text-4xl md:text-5xl font-bold mb-6">Pronto para dar o primeiro passo?</h2>
-                <p class="text-xl mb-10 text-custom-creme md:text-2xl">Sua jornada de transformação começa com uma decisão. Me envie uma mensagem para agendarmos sua primeira sessão. Estou aqui para te escutar.</p>
-                <a href="https://wa.me/5514997477254?text=Olá,%20Shirley!%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" class="inline-flex items-center justify-center px-10 py-4 rounded-full font-bold text-white uppercase tracking-wider bg-custom-rust hover:bg-custom-ocre transition-all duration-300 transform hover:scale-105">
+                <p class="text-xl mb-10 text-custom-creme md:text-2xl">Sua jornada de transformação começa com uma decisão. Me envie uma mensagem para agendarmos sua primeira sessão online. Estou aqui para te escutar.</p>
+                <a href="https://wa.me/5514997477254?text=Olá,%20Shirley!%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-10 py-4 rounded-full font-bold text-white uppercase tracking-wider bg-custom-rust hover:bg-custom-ocre transition-all duration-300 transform hover:scale-105">
                     <i class="fab fa-whatsapp mr-3"></i> Agendar Sessão Online
                 </a>
             </div>
@@ -174,23 +205,22 @@
 
     </main>
 
-    <!-- Footer -->
     <footer class="bg-white py-16 px-4">
         <div class="container mx-auto text-center">
             <p class="font-bold text-2xl mb-6 text-custom-olive">Me acompanhe nas redes sociais:</p>
             <div class="flex justify-center gap-6 mb-10">
-                <a href="https://www.instagram.com/shirleyreinis/" target="_blank" class="w-16 h-16 flex items-center justify-center rounded-2xl text-3xl border-2 border-custom-olive text-custom-olive bg-transparent hover:bg-custom-olive hover:text-custom-creme transition-all duration-300 transform hover:-translate-y-1">
+                <a href="https://www.instagram.com/shirleyreinis/" target="_blank" rel="noopener noreferrer" class="w-16 h-16 flex items-center justify-center rounded-2xl text-3xl border-2 border-custom-olive text-custom-olive bg-transparent hover:bg-custom-olive hover:text-custom-creme transition-all duration-300 transform hover:-translate-y-1" aria-label="Link para o Instagram de Shirley Reinis">
                     <i class="fab fa-instagram"></i>
                 </a>
-                <a href="https://www.tiktok.com/@shirleyreinis" target="_blank" class="w-16 h-16 flex items-center justify-center rounded-2xl text-3xl border-2 border-custom-olive text-custom-olive bg-transparent hover:bg-custom-olive hover:text-custom-creme transition-all duration-300 transform hover:-translate-y-1">
+                <a href="https://www.tiktok.com/@shirleyreinis" target="_blank" rel="noopener noreferrer" class="w-16 h-16 flex items-center justify-center rounded-2xl text-3xl border-2 border-custom-olive text-custom-olive bg-transparent hover:bg-custom-olive hover:text-custom-creme transition-all duration-300 transform hover:-translate-y-1" aria-label="Link para o TikTok de Shirley Reinis">
                     <i class="fab fa-tiktok"></i>
                 </a>
-                <a href="https://www.youtube.com/@shirleyreinis" target="_blank" class="w-16 h-16 flex items-center justify-center rounded-2xl text-3xl border-2 border-custom-olive text-custom-olive bg-transparent hover:bg-custom-olive hover:text-custom-creme transition-all duration-300 transform hover:-translate-y-1">
+                <a href="https://www.youtube.com/URL-DO-SEU-CANAL" target="_blank" rel="noopener noreferrer" class="w-16 h-16 flex items-center justify-center rounded-2xl text-3xl border-2 border-custom-olive text-custom-olive bg-transparent hover:bg-custom-olive hover:text-custom-creme transition-all duration-300 transform hover:-translate-y-1" aria-label="Link para o canal do YouTube de Shirley Reinis">
                     <i class="fab fa-youtube"></i>
                 </a>
             </div>
-            <p class="text-base text-gray-600">&copy; <span id="year"></span> Shirley Reinis | Todos os direitos reservados.</p>
-            <p class="text-sm text-gray-500 mt-2">Atendimento 100% Online</p>
+            <p class="text-base text-gray-600">© <span id="year"></span> Shirley Reinis | Todos os direitos reservados.</p>
+            <p class="text-sm text-gray-500 mt-2">Atendimento 100% Online em todo o Brasil.</p>
         </div>
     </footer>
 
