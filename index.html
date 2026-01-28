@@ -114,12 +114,16 @@
                     <button onClick={() => scrollToSection('metodo')} className="hover:text-[#9D4E50] transition-colors">Como Funciona</button>
                     <button onClick={() => scrollToSection('sobre')} className="hover:text-[#9D4E50] transition-colors">Sobre Mim</button>
                     <a href="https://shirleyreinis.com.br/blog/" className="hover:text-[#9D4E50] transition-colors">Blog</a>
-                    <button 
-                      onClick={() => scrollToSection('contato')} 
+                    
+                    {/* Botão de Agendar no Menu Desktop agora é um Link para o WhatsApp */}
+                    <a 
+                      href="https://wa.me/5514997477254" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
                       className="px-6 py-2.5 bg-[#9D4E50] text-white rounded-sm hover:bg-[#823D3F] transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
                     >
                       Agendar
-                    </button>
+                    </a>
                   </div>
 
                   {/* Mobile Menu Button */}
@@ -138,7 +142,9 @@
                     <button onClick={() => scrollToSection('metodo')} className="block w-full text-left py-2 text-[#1D4E56] font-medium border-b border-[#E5E0D8]/50">Como Funciona</button>
                     <button onClick={() => scrollToSection('sobre')} className="block w-full text-left py-2 text-[#1D4E56] font-medium border-b border-[#E5E0D8]/50">Sobre Mim</button>
                     <a href="https://shirleyreinis.com.br/blog/" className="block w-full text-left py-2 text-[#1D4E56] font-medium border-b border-[#E5E0D8]/50">Blog</a>
-                    <button onClick={() => scrollToSection('contato')} className="block w-full text-left py-3 mt-4 font-bold text-[#9D4E50]">Agendar Sessão</button>
+                    
+                    {/* Botão de Agendar no Menu Mobile agora é um Link para o WhatsApp */}
+                    <a href="https://wa.me/5514997477254" target="_blank" rel="noopener noreferrer" className="block w-full text-left py-3 mt-4 font-bold text-[#9D4E50]">Agendar Sessão</a>
                   </div>
                 )}
               </nav>
@@ -152,22 +158,22 @@
                 </span>
                 
                 <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif text-[#1D4E56] leading-[1.1] mb-8">
-                  A pressão do futuro <br/>
-                  <span className="italic font-light text-[#9D4E50]">não precisa</span> ser suportada sozinha.
+                  Você <span className="italic font-light text-[#9D4E50]">não precisa</span> suportar <br/> toda essa pressão sozinho.
                 </h1>
                 
                 <p className="text-lg md:text-xl text-[#5A6B70] max-w-2xl mb-12 leading-relaxed">
-                  Navegue pela ansiedade do pré-vestibular e da universidade com suporte psicanalítico. 
-                  Te ofereço um espaço seguro para transformar angústia em movimento.
+                  Em fases em que a ansiedade e as angústias estão causando sofrimento, como pré vestibular e universidade, um suporte com atendimento de psicanalista pode fazer toda a diferença. Buscar ajuda é um ato de coragem.
                 </p>
                 
                 <div className="flex flex-col sm:flex-row gap-5 w-full sm:w-auto justify-center">
-                  <button 
-                    onClick={() => scrollToSection('contato')}
-                    className="px-10 py-4 bg-[#9D4E50] text-white text-sm font-bold tracking-widest uppercase rounded-sm hover:bg-[#823D3F] transition-all shadow-lg hover:shadow-[#9D4E50]/30"
+                  <a 
+                    href="https://wa.me/5514997477254"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-10 py-4 bg-[#9D4E50] text-white text-sm font-bold tracking-widest uppercase rounded-sm hover:bg-[#823D3F] transition-all shadow-lg hover:shadow-[#9D4E50]/30 inline-block"
                   >
                     Quero começar agora
-                  </button>
+                  </a>
                   <button 
                     onClick={() => scrollToSection('metodo')}
                     className="px-10 py-4 bg-transparent border border-[#1D4E56]/30 text-[#1D4E56] text-sm font-bold tracking-widest uppercase rounded-sm hover:bg-[#1D4E56] hover:text-white transition-all"
@@ -176,6 +182,7 @@
                   </button>
                 </div>
                 
+                {/* Seta Removida conforme solicitado */}
               </section>
 
               {/* Pain Points Section */}
@@ -193,7 +200,7 @@
                         Este cenário soa familiar para você?
                       </h2>
                       <p className="text-[#5A6B70] mb-8 leading-relaxed text-lg">
-                        A fase do vestibular e da universidade é vendida como a "melhor época da vida", mas a realidade interna frequentemente envolve angustia e cobrança excessiva. Você pode estar sentindo:
+                        Mesmo que as pessoas à sua volta acreditem que você está vivendo "a melhor época da sua vida", a realidade interna pode envolver angústias, estresse, ansiedade e sofrimento,   com uma auto cobrança excessiva. Você pode estar sentindo:
                       </p>
                       
                       <ul className="space-y-6">
@@ -273,12 +280,10 @@
                       </div>
                       <div className="text-5xl font-serif text-[#9D4E50]/20 font-bold mb-4 group-hover:text-[#9D4E50] transition-colors">01</div>
                       <h3 className="text-xl font-bold text-[#1D4E56] mb-3">O Encontro Inicial</h3>
-                      <p className="text-[#5A6B70] leading-relaxed mb-4">
+                      <p className="text-[#5A6B70] leading-relaxed">
                         Uma conversa para alinharmos expectativas e entendermos sua necessidade.
                       </p>
-                      <span className="inline-block bg-[#1D4E56] text-[#FAF9F6] text-xs px-3 py-1 rounded-sm font-medium tracking-wide">
-                        Sem cobrança nesta sessão
-                      </span>
+                      {/* Removido: Sem cobrança nesta sessão */}
                     </div>
 
                     {/* Card 2 */}
@@ -308,12 +313,14 @@
 
                   {/* NOVO: Botão Agende sua Sessão na seção de Metodologia */}
                   <div className="mt-16 text-center">
-                    <button 
-                        onClick={() => scrollToSection('contato')}
-                        className="px-10 py-4 bg-[#9D4E50] text-white text-sm font-bold tracking-widest uppercase rounded-sm hover:bg-[#823D3F] transition-all shadow-lg hover:shadow-[#9D4E50]/30 transform hover:-translate-y-1"
+                    <a 
+                        href="https://wa.me/5514997477254"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="px-10 py-4 bg-[#9D4E50] text-white text-sm font-bold tracking-widest uppercase rounded-sm hover:bg-[#823D3F] transition-all shadow-lg hover:shadow-[#9D4E50]/30 transform hover:-translate-y-1 inline-block"
                     >
                         Agende sua Sessão
-                    </button>
+                    </a>
                   </div>
 
                 </div>
@@ -376,8 +383,7 @@
                 <div className="max-w-3xl mx-auto px-6">
                   <h2 className="text-3xl md:text-4xl font-serif text-[#1D4E56] mb-6">Vamos conversar?</h2>
                   <p className="text-[#5A6B70] mb-10 text-lg">
-                    O primeiro passo é o mais importante. Agende o encontro inicial para nos conhecermos, 
-                    sem custo e sem compromisso.
+                    O primeiro passo é o mais importante. Agende o encontro inicial para nos conhecermos e alinharmos expectativas.
                   </p>
                   
                   <a 
@@ -440,8 +446,3 @@
     </script>
 </body>
 </html>
-
-
-
-
-
